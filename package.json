@@ -1,0 +1,11 @@
+{
+  "name": "Electron_Painter",
+  "version": "0.1.0",
+  "description": "A drawing program wrote with Electron",
+  "main": "main.js",
+  "author": "Darlene Zouras",
+  "license": "ISC",
+  "dependencies": {
+    "electron": "^1.4.12"
+  }
+}
