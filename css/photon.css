@@ -14,6 +14,7 @@ canvas,
 progress,
 video {
   vertical-align: baseline;
+  border: 1px solid black;
 }
 
 audio:not([controls]) {
