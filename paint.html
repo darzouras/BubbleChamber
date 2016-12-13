@@ -2,12 +2,13 @@
 <html>
 <head>
     <link rel="stylesheet" href="css/photon.css">
+    <link rel="stylesheet" href="css/style.css">
+
     <meta charset="UTF-8">
     <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" type="text/javascript"></script>
     <script src="js/onload.js" type="text/javascript"></script>
-    <script src="js/draw.js" type="text/javascript"></script>
 
     <script>if (window.module) module = window.module;</script>
     <title>Paint</title>
@@ -18,9 +19,20 @@
         <div class="window-content">
             <div class="padded-more">
                 <h1>New Project</h1>
-                <br />
-                    <canvas id="canvas" width="470" height="620"></canvas>
-                <br /><br />
+                <div class="wrapper">
+                    <div class="left">
+                        <canvas id="canvas" width="470" height="620"></canvas>
+                    </div>
+                    <div class="right">
+                        <table class="colorpicker">
+                            <tr>
+                                <td class="colorpicker" onclick="colorPick('#ffffff');" bgcolor="#ffffff"></td>
+                                <td class="colorpicker" onclick="colorPick('#666666');" bgcolor="#666666"></td>
+                                <td class="colorpicker" onclick="colorPick('#000000');" bgcolor="#000000"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
                 <a href="index.html">Back</a>
             </div>
         </div>

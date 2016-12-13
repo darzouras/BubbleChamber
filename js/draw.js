@@ -1,6 +1,8 @@
 function draw(color, size) {
     var context = document.getElementById('canvas').getContext("2d");
-    
+    var currentColor = color;
+    var clickColor = new Array();
+
     // Mouse down event
     $('#canvas').mousedown(function(e) {
         var mouseX = e.pageX - this.offsetLeft;
@@ -38,13 +40,15 @@ function draw(color, size) {
         clickX.push(x);
         clickY.push(y);
         clickDrag.push(dragging);
+        clickColor.push(currentColor);
     }
 
     function redraw() {
-        context.clearRect(0, 0, context.canvas.width, context.canvas.height); // clears the canvas
+        // context.clearRect(0, 0, context.canvas.width, context.canvas.height);
+        // clears the canvas
 
         // FIXME allow these to be changed!!!
-        context.strokeStyle = color;
+        // context.strokeStyle = currentColor;
         context.lineJoin = "round";
         context.lineWidth = size;
 
@@ -57,6 +61,7 @@ function draw(color, size) {
             }
             context.lineTo(clickX[i], clickY[i]);
             context.closePath();
+            context.strokeStyle = clickColor[i];
             context.stroke();
         }
     }
