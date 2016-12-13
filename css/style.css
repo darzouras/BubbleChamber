@@ -1,9 +1,11 @@
 tr.colorpicker {
     padding: 0px;
+    width: 120px;
 }
 
 td.colorpicker {
     height: 20px;
+    width: 20px;
     padding: 0px;
 }
 

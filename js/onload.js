@@ -7,6 +7,8 @@ function colorPick(colorCode) {
 }
 
 window.onload = function() {
+
+
     /***************************************************************
     DRAWING MECHANICS
     ***************************************************************/
@@ -58,7 +60,6 @@ window.onload = function() {
         // clears the canvas
 
         // FIXME allow these to be changed!!!
-        // context.strokeStyle = currentColor;
         context.lineJoin = "round";
         context.lineWidth = currentSize;
 
