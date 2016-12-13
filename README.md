@@ -10,7 +10,7 @@ Currently there's not much to do, but I'm trying to add more functionality to it
 * Post drawings to a personal board or community board
 
 # Getting Started
-Getting this program ready to run is super easy:
+Getting this program ready to run is super easy:  
     1.  Clone the repository to your machine.
     2.  Enter the directory and `npm install`.
     3.  Run via Electron:
