@@ -16,4 +16,4 @@ Getting this program ready to run is super easy:
     3.  Run via Electron:
         * On Mac / Linux: `./node_modules/.bin/electron .`
         * On Windows: `.\node_modules\.bin\electron .`
-        * If Electron is install globally with npm, `electron .`
+        * If Electron is install globally with npm, `electron .` 
