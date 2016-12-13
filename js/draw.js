@@ -1,6 +1,6 @@
-window.onload = function() {
+function draw(color, size) {
     var context = document.getElementById('canvas').getContext("2d");
-
+    
     // Mouse down event
     $('#canvas').mousedown(function(e) {
         var mouseX = e.pageX - this.offsetLeft;
@@ -44,9 +44,9 @@ window.onload = function() {
         context.clearRect(0, 0, context.canvas.width, context.canvas.height); // clears the canvas
 
         // FIXME allow these to be changed!!!
-        context.strokeStyle = "#666666";
+        context.strokeStyle = color;
         context.lineJoin = "round";
-        context.lineWidth = 5;
+        context.lineWidth = size;
 
         for (var i=0; i < clickX.length; i++) {
             context.beginPath();
