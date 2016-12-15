@@ -24,7 +24,7 @@
                         <canvas id="canvas" width="470" height="620"></canvas>
                     </div>
                     <div class="right">
-
+                      <h4>Color</h4>
                         <table class="colorpicker">
                             <tr class="colorpicker"> <!-- row 0 -->
                                 <td class="colorpicker" onclick="colorPick('#ffffff');" bgcolor="#ffffff"></td>
@@ -32,8 +32,7 @@
                             </tr>
                             <tr class="colorpicker"> <!-- WHITE, GRAY, BLACK --> <!-- row 1 -->
                                 <td class="colorpicker" onclick="colorPick('#fdfefe');" bgcolor="#fdfefe"></td>
-                                <td class="colorpicker" onclick="colorPick('#f8f9f9');"
-                                bgcolor="#f8f9f9"></td>
+                                <td class="colorpicker" onclick="colorPick('#f8f9f9');" bgcolor="#f8f9f9"></td>
                                 <td class="colorpicker" onclick="colorPick('#f4f6f6');" bgcolor="#f4f6f6"></td>
                                 <td class="colorpicker" onclick="colorPick('#f2f4f4');" bgcolor="#f2f4f4"></td>
                                 <td class="colorpicker" onclick="colorPick('#ebedef');" bgcolor="#ebedef"></td>
@@ -115,6 +114,26 @@
                         </table>
 
                         <!-- FIXME add brush size options -->
+                      <h4>Size</h4>
+                        <table class="sizepicker">
+                          <tr class="sizepicker">
+                            <td class="sizepicker" onclick="sizepick(1);">
+                              1 px
+                            </td>
+                            <td class="sizepicker" onclick="sizepick(3);">
+                              3 px
+                            </td>
+                            <td class="sizepicker" onclick="sizepick(5);">
+                              5 px
+                            </td>
+                            <td class="sizepicker" onclick="sizepick(7);">
+                              7 px
+                            </td>
+                            <td class="sizepicker" onclick="sizepick(10);">
+                              10 px
+                            </td>
+                          </tr>
+                        </table>
                     </div>
                 </div>
                 <a href="index.html">Back</a>

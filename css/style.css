@@ -29,3 +29,17 @@ div.right {
     float: right;
     padding-left: 10px;
 }
+
+td.sizepicker {
+  padding: 2px;
+  text-align: center;
+}
+
+td.sizepicker:hover {
+    background-color: #f8f9f9;
+}
+
+td.sizepicker {
+  background-color: #ffffff;
+  color: #000000;
+}

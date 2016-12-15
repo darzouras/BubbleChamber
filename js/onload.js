@@ -1,9 +1,16 @@
+// FIXME on some draws the y coordinate is off by ~5 pixels, draws above the mouse pointer
+
 var currentColor = "#666666";
 var currentSize = 5;
 
 // onclick function for color pickers
 function colorPick(colorCode) {
     currentColor = colorCode;
+}
+
+// onclick function for size pickers
+function sizepick(size) {
+  currentSize = size;
 }
 
 window.onload = function() {
@@ -14,6 +21,7 @@ window.onload = function() {
     ***************************************************************/
     var context = document.getElementById('canvas').getContext("2d");
     var clickColor = new Array();
+    var clickSize = new Array();
 
     // Mouse down event
     $('#canvas').mousedown(function(e) {
@@ -53,6 +61,7 @@ window.onload = function() {
         clickY.push(y);
         clickDrag.push(dragging);
         clickColor.push(currentColor);
+        clickSize.push(currentSize);
     }
 
     function redraw() {
@@ -61,7 +70,6 @@ window.onload = function() {
 
         // FIXME allow these to be changed!!!
         context.lineJoin = "round";
-        context.lineWidth = currentSize;
 
         for (var i=0; i < clickX.length; i++) {
             context.beginPath();
@@ -74,6 +82,7 @@ window.onload = function() {
             context.closePath();
             context.strokeStyle = clickColor[i];
             context.stroke();
+            context.lineWidth = clickSize[i];
         }
     }
 }
