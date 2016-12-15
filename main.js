@@ -10,8 +10,8 @@ function createWindow () {
     height: 950
   });
 
-  mainWindow.loadURL(`file://${__dirname}/index.html`);
-  mainWindow.webContents.openDevTools();
+  mainWindow.loadURL(`file://${__dirname}/paint.html`);
+  // mainWindow.webContents.openDevTools();
 
   mainWindow.on('closed', function () {
     mainWindow = null;
