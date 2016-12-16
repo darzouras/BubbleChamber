@@ -12,8 +12,5 @@ Currently there's not much to do, but I'm trying to add more functionality to it
 # Getting Started
 Getting this program ready to run is super easy:  
 * Clone the repository to your machine.  
-* Enter the directory and `npm install`.  
-* Run via Electron:  
-    * On Mac / Linux: `./node_modules/.bin/electron .`  
-    * On Windows: `.\node_modules\.bin\electron .`  
-    * If Electron is install globally with npm, `electron .`  
+* In the command line enter the directory and `npm install`.  
+* Run by typing `npm start`.
