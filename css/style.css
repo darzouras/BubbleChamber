@@ -43,3 +43,19 @@ td.sizepicker {
   background-color: #ffffff;
   color: #000000;
 }
+
+img.canvas_img {
+  left: 10;
+  top: 10;
+  height: 620px;
+  position: absolute;
+  width: 470px;
+  border: 0;
+}
+
+canvas.drawing_canvas {
+  z-index: 1;
+  left: 10;
+  top: 10;
+  position: relative;
+}

@@ -1,4 +1,4 @@
-// FIXME on some draws the y coordinate is off by ~5 pixels, draws above the mouse pointer
+// FIXME drawings does not match with cursor when using scrolling
 
 var currentColor = "#666666";
 var currentSize = 5;
@@ -19,6 +19,7 @@ window.onload = function() {
     /***************************************************************
     DRAWING MECHANICS
     ***************************************************************/
+    var canvas=document.getElementById('canvas');
     var context = document.getElementById('canvas').getContext("2d");
     var clickColor = new Array();
     var clickSize = new Array();
@@ -85,4 +86,9 @@ window.onload = function() {
             context.lineWidth = clickSize[i];
         }
     }
+
+    var mirror = document.getElementById('drawing', function(e) {
+      var dataURL = canvas.toDataURL('image/png');
+      mirror.src = dataURL;
+    });
 }
