@@ -4,7 +4,7 @@
   "description": "A drawing program wrote with Electron",
   "main": "main.js",
   "author": "Darlene Zouras",
-  "repository": "https://github.com/darzouras/electron_painter.git",
+  "repository": "https://github.com/darzouras/BubbleChamber",
   "license": "ISC",
   "dependencies": {
     "electron": "^1.4.12"

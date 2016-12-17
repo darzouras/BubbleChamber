@@ -8,6 +8,7 @@ Currently there's not much to do, but I'm trying to add more functionality to it
 * Connected community of Users
 * Save drawings to your machine
 * Post drawings to a personal board or community board
+* Daily drawing journal (+ text box?)
 
 # Getting Started
 Getting this program ready to run is super easy:  
