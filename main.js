@@ -1,5 +1,7 @@
-const electron = require('electron');
-const app = electron.app;
+var electron = require('electron');
+var express = require("express");
+var mysql = require("./dbcon.js"); // msql commands will look like mysql.pool.query 
+var app = electron.app;
 const BrowserWindow = electron.BrowserWindow;
 
 let mainWindow;
