@@ -87,8 +87,9 @@ window.onload = function() {
         }
     }
 
-    var mirror = document.getElementById('drawing', function(e) {
+    var button = document.getElementById('btn-download');
+    button.addEventListener('click', function (e) {
       var dataURL = canvas.toDataURL('image/png');
-      mirror.src = dataURL;
+      button.href = dataURL;
     });
 }

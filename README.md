@@ -6,7 +6,7 @@ Currently there's not much to do, but I'm trying to add more functionality to it
 * Further customization of brush tools
 * Multiple layers
 * Connected community of Users
-* Save drawings to your machine
+* <S>Save drawings to your machine</s> Working since Dec. 18, 2016!
 * Post drawings to a personal board or community board
 * Daily drawing journal (+ text box?)
 
@@ -15,3 +15,4 @@ Getting this program ready to run is super easy:
 * Clone the repository to your machine.  
 * In the command line enter the directory and `npm install`.  
 * Run by typing `npm start`.
+CURRENTLY there may be some errors when connecting while I work out the connection with my mysql server (running from a Raspberry Pi). Commenting out the line `var mysql = require("./dbcon.js");` in main.js should resolve any issues. Thanks!
