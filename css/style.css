@@ -1,11 +1,13 @@
-tr.colorpicker {
-    padding: 0px;
+table.colorpicker {
     width: 120px;
 }
 
+tr.colorpicker {
+    padding: 0px;
+}
+
 td.colorpicker {
-    height: 20px;
-    width: 20px;
+    height: 15px;
     padding: 0px;
 }
 
