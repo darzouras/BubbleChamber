@@ -34,16 +34,13 @@ div.right {
     padding-left: 10px;
 }
 
-td.sizepicker {
+td.sizepicker, td.opacitypicker, td.shapepicker {
   padding: 2px;
   text-align: center;
-}
-
-td.sizepicker:hover {
-    background-color: #f8f9f9;
-}
-
-td.sizepicker {
   background-color: #ffffff;
   color: #000000;
+}
+
+td.sizepicker:hover, td.opacitypicker:hover, td.shapepicker:hover {
+    background-color: #f8f9f9;
 }

@@ -2,6 +2,8 @@
 
 var currentColor = "#666666";
 var currentSize = 5;
+var currentOpacity = 1;
+var currentShape = "round";
 
 // onclick function for color pickers
 function colorPick(colorCode) {
@@ -11,6 +13,14 @@ function colorPick(colorCode) {
 // onclick function for size pickers
 function sizepick(size) {
   currentSize = size;
+}
+
+function opacityPick(opPercent) {
+    currentOpacity = opPercent;
+}
+
+function shapePick(shape) {
+    currentShape = shape;
 }
 
 window.onload = function() {
@@ -23,6 +33,8 @@ window.onload = function() {
     var context = document.getElementById('canvas').getContext("2d");
     var clickColor = new Array();
     var clickSize = new Array();
+    var clickOpacity = new Array();
+    var clickShape = new Array();
 
     // Mouse down event
     $('#canvas').mousedown(function(e) {
@@ -63,14 +75,13 @@ window.onload = function() {
         clickDrag.push(dragging);
         clickColor.push(currentColor);
         clickSize.push(currentSize);
+        clickOpacity.push(currentOpacity);
+        clickShape.push(currentShape);
     }
 
     function redraw() {
         // context.clearRect(0, 0, context.canvas.width, context.canvas.height);
         // clears the canvas
-
-        // FIXME allow these to be changed!!!
-        context.lineJoin = "round";
 
         for (var i=0; i < clickX.length; i++) {
             context.beginPath();
@@ -81,9 +92,12 @@ window.onload = function() {
             }
             context.lineTo(clickX[i], clickY[i]);
             context.closePath();
+            // FIXME opacity is not quite working! look to http://jsfiddle.net/rnNFB/1/
+            context.globalAlpha = clickOpacity[i];
             context.strokeStyle = clickColor[i];
-            context.stroke();
+            context.lineJoin = clickShape[i];
             context.lineWidth = clickSize[i];
+            context.stroke();
         }
     }
 
