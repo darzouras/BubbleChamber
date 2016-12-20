@@ -16,6 +16,8 @@ let config = {
     messagingSenderId: "604263226065"
 };
 firebase.initializeApp(config);
+// var storage = firebase.storage();
+// var storageRef = storage.ref();
 
 /* mysql.pool.connect(function(err) {
   if(err){
