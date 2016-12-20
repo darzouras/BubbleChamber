@@ -30,8 +30,15 @@ firebase.initializeApp(config);
 function createWindow () {
   mainWindow = new BrowserWindow({
     width: 750,
-    height: 950
+    height: 950,
   });
+
+  if (process.platform !== 'darwin') {
+    mainWindow.icon = 'resources/1024_bcicon.png';
+  }
+  else {
+    mainWindow.icon = 'resources/1024_bcicon.icns';
+  }
 
   mainWindow.loadURL(`file://${__dirname}/paint.html`);
   // mainWindow.webContents.openDevTools();
