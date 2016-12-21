@@ -41,3 +41,7 @@ td.sizepicker, td.opacitypicker, td.shapepicker {
 td.sizepicker:hover, td.opacitypicker:hover, td.shapepicker:hover {
     background-color: #f8f9f9;
 }
+
+.absolute {
+    position: absolute;
+}

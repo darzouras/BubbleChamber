@@ -1,5 +1,6 @@
 // FIXME drawings does not match with cursor when using scrolling
 // FIXME write a canvas object that is inserted into the page, allow the height and width to be set (with some max limits).
+// FIXME load a default image that has some information about using the application!
 // FIXME write a button that wipes the entire canvas by deleting the active canvas object and creating a new one.
 
 var currentColor = "#666666";
@@ -31,8 +32,11 @@ window.onload = function() {
     /***************************************************************
     DRAWING MECHANICS
     ***************************************************************/
-    var canvas=document.getElementById('canvas');
-    var context = document.getElementById('canvas').getContext("2d");
+    // BASE CANVAS
+    var canvas = document.getElementById('canvas');
+    var context = canvas.getContext("2d");
+
+    // These arrays hold all of the changing variables
     var clickColor = new Array();
     var clickSize = new Array();
     var clickOpacity = new Array();
@@ -82,7 +86,7 @@ window.onload = function() {
     }
 
     function redraw() {
-        // context.clearRect(0, 0, context.canvas.width, context.canvas.height);
+        context.clearRect(0, 0, context.canvas.width, context.canvas.height);
         // clears the canvas
 
         for (var i=0; i < clickX.length; i++) {
