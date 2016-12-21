@@ -1,16 +1,24 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <link rel="stylesheet" href="css/photon.css">
     <link rel="stylesheet" href="css/style.css">
 
     <meta charset="UTF-8">
-    <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+    <script>
+        if (typeof module === 'object') {
+            window.module = module;
+            module = undefined;
+        }
+    </script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" type="text/javascript"></script>
     <script src="js/onload.js" type="text/javascript"></script>
 
-    <script>if (window.module) module = window.module;</script>
+    <script>
+        if (window.module) module = window.module;
+    </script>
     <title>Paint</title>
 </head>
 
@@ -19,306 +27,30 @@
         <div class="window-content">
             <div class="wrapper">
                 <div class="left">
-                  <div class="canvas_container">
-                    <canvas id="canvas" width="470" height="620" class="drawing_canvas"></canvas>
-                  </div>
+                    <div class="canvas_container">
+                        <canvas id="canvas" width="470" height="620" class="drawing_canvas"></canvas>
+                    </div>
                 </div>
                 <div class="right">
-                  <h4>Color</h4>
-                    <table class="colorpicker">
-                        <tr class="colorpicker"> <!-- row 0 -->
-                            <td class="colorpicker" onclick="colorPick('#ffffff');" bgcolor="#ffffff"></td>
-                            <td class="colorpicker" onclick="colorPick('#000000');" bgcolor="#000000"></td>
-                        </tr>
-                        <tr class="colorpicker"> <!-- WHITE, GRAY, BLACK --> <!-- row 1 -->
-                            <td class="colorpicker" onclick="colorPick('#fdfefe');" bgcolor="#fdfefe"></td>
-                            <td class="colorpicker" onclick="colorPick('#f8f9f9');" bgcolor="#f8f9f9"></td>
-                            <td class="colorpicker" onclick="colorPick('#f4f6f6');" bgcolor="#f4f6f6"></td>
-                            <td class="colorpicker" onclick="colorPick('#f2f4f4');" bgcolor="#f2f4f4"></td>
-                            <td class="colorpicker" onclick="colorPick('#ebedef');" bgcolor="#ebedef"></td>
-                            <td class="colorpicker" onclick="colorPick('#eaecee');" bgcolor="#eaecee"></td>
-                        </tr>
-                        <tr class="colorpicker"> <!-- row 2 -->
-                            <td class="colorpicker" onclick="colorPick('#fbfcfc');" bgcolor="#fbfcfc"></td>
-                            <td class="colorpicker" onclick="colorPick('#f2f3f4');" bgcolor="#f2f3f4"></td>
-                            <td class="colorpicker" onclick="colorPick('#eaeded');" bgcolor="#eaeded"></td>
-                            <td class="colorpicker" onclick="colorPick('#e5e8e8');" bgcolor="#e5e8e8"></td>
-                            <td class="colorpicker" onclick="colorPick('#d6dbdf');" bgcolor="#d6dbdf"></td>
-                            <td class="colorpicker" onclick="colorPick('#d5d8dc');" bgcolor="#d5d8dc"></td>
-                        </tr>
-                        <tr class="colorpicker"> <!-- row 3 -->
-                            <td class="colorpicker" onclick="colorPick('#f7f9f9');" bgcolor="#f7f9f9"></td>
-                            <td class="colorpicker" onclick="colorPick('#e5e7e9');" bgcolor="#e5e7e9"></td>
-                            <td class="colorpicker" onclick="colorPick('#d5dbdb');" bgcolor="#d5dbdb"></td>
-                            <td class="colorpicker" onclick="colorPick('#ccd1d1');" bgcolor="#ccd1d1"></td>
-                            <td class="colorpicker" onclick="colorPick('#aeb6bf');" bgcolor="#aeb6bf"></td>
-                            <td class="colorpicker" onclick="colorPick('#abb2b9');" bgcolor="#abb2b9"></td>
-                        </tr>
-                        <tr> <!-- row 4 -->
-                            <td class="colorpicker" onclick="colorPick('#f4f6f7');" bgcolor="#f4f6f7"></td>
-                            <td class="colorpicker" onclick="colorPick('#d7dbdd');" bgcolor="#d7dbdd"></td>
-                            <td class="colorpicker" onclick="colorPick('#bfc9ca');" bgcolor="#bfc9ca"></td>
-                            <td class="colorpicker" onclick="colorPick('#b2babb');" bgcolor="#b2babb"></td>
-                            <td class="colorpicker" onclick="colorPick('#85929e');" bgcolor="#85929e"></td>
-                            <td class="colorpicker" onclick="colorPick('#808b96');" bgcolor="#808b96"></td>
-                        </tr>
-                        <tr class="colorpicker"> <!-- row 5 -->
-                            <td class="colorpicker" onclick="colorPick('#f0f3f4');" bgcolor="#f0f3f4"></td>
-                            <td class="colorpicker" onclick="colorPick('#cacfd2');" bgcolor="#cacfd2"></td>
-                            <td class="colorpicker" onclick="colorPick('#aab7b8');" bgcolor="#aab7b8"></td>
-                            <td class="colorpicker" onclick="colorPick('#99a3a4');" bgcolor="#99a3a4"></td>
-                            <td class="colorpicker" onclick="colorPick('#5d6d7e');" bgcolor="#5d6d7e"></td>
-                            <td class="colorpicker" onclick="colorPick('#566573');" bgcolor="#566573"></td>
-                        </tr>
-                        <tr class="colorpicker"> <!-- row 6 -->
-                            <td class="colorpicker" onclick="colorPick('#ecf0f1');" bgcolor="#ecf0f1"></td>
-                            <td class="colorpicker" onclick="colorPick('#bdc3c7');" bgcolor="#bdc3c7"></td>
-                            <td class="colorpicker" onclick="colorPick('#95a5a6');" bgcolor="#95a5a6"></td>
-                            <td class="colorpicker" onclick="colorPick('#7f8c8d');" bgcolor="#7f8c8d"></td>
-                            <td class="colorpicker" onclick="colorPick('#34495e');" bgcolor="#34495e"></td>
-                            <td class="colorpicker" onclick="colorPick('#2c3e50');" bgcolor="#2c3e50"></td>
-                        </tr>
-                        <tr class="colorpicker"> <!-- row 7 -->
-                            <td class="colorpicker" onclick="colorPick('#d0d3d4');" bgcolor="#d0d3d4"></td>
-                            <td class="colorpicker" onclick="colorPick('#a6acaf');" bgcolor="#a6acaf"></td>
-                            <td class="colorpicker" onclick="colorPick('#839192');" bgcolor="#839192"></td>
-                            <td class="colorpicker" onclick="colorPick('#707b7c');" bgcolor="#707b7c"></td>
-                            <td class="colorpicker" onclick="colorPick('#2e4053');" bgcolor="#2e4053"></td>
-                            <td class="colorpicker" onclick="colorPick('#273746');" bgcolor="#273746"></td>
-                        </tr>
-                        <tr class="colorpicker"> <!-- row 8 -->
-                            <td class="colorpicker" onclick="colorPick('#b3b6b7');" bgcolor="#b3b6b7"></td>
-                            <td class="colorpicker" onclick="colorPick('#909497');" bgcolor="#909497"></td>
-                            <td class="colorpicker" onclick="colorPick('#717d7e');" bgcolor="#717d7e"></td>
-                            <td class="colorpicker" onclick="colorPick('#616a6b');" bgcolor="#616a6b"></td>
-                            <td class="colorpicker" onclick="colorPick('#283747');" bgcolor="#283747"></td>
-                            <td class="colorpicker" onclick="colorPick('#212f3d');" bgcolor="212f3d"></td>
-                        </tr>
-                        <tr class="colorpicker"> <!-- row 9 -->
-                            <td class="colorpicker" onclick="colorPick('#979a9a');" bgcolor="#979a9a"></td>
-                            <td class="colorpicker" onclick="colorPick('#797d7f');" bgcolor="#797d7f"></td>
-                            <td class="colorpicker" onclick="colorPick('#5f6a6a');" bgcolor="#5f6a6a"></td>
-                            <td class="colorpicker" onclick="colorPick('#515a5a');" bgcolor="#515a5a"></td>
-                            <td class="colorpicker" onclick="colorPick('#212f3c');" bgcolor="#212f3c"></td>
-                            <td class="colorpicker" onclick="colorPick('#1c2833');" bgcolor="#1c2833"></td>
-                        </tr>
-                        <tr class="colorpicker"> <!-- row 10 -->
-                            <td class="colorpicker" onclick="colorPick('#7b7d7d');" bgcolor="#7b7b7d"></td>
-                            <td class="colorpicker" onclick="colorPick('#626567');" bgcolor="#626567"></td>
-                            <td class="colorpicker" onclick="colorPick('#4d5656');" bgcolor="#4d5656"></td>
-                            <td class="colorpicker" onclick="colorPick('#424949');" bgcolor="#424949"></td>
-                            <td class="colorpicker" onclick="colorPick('#1b2631');" bgcolor="#1b2631"></td>
-                            <td class="colorpicker" onclick="colorPick('#17202a');" bgcolor="#17202a"></td>
-                        </tr>
-                        <tr class="colorpicker"> <!-- YO row 1 -->
-                            <td class="colorpicker" onclick="colorPick('#e9f7ef');" bgcolor="#e9f7ef"></td>
-                            <td class="colorpicker" onclick="colorPick('#eafaf1');" bgcolor="#eafaf1"></td>
-                            <td class="colorpicker" onclick="colorPick('#fef9e7');" bgcolor="#fef9e7"></td>
-                            <td class="colorpicker" onclick="colorPick('#fef5e7');" bgcolor="#fef5e7"></td>
-                            <td class="colorpicker" onclick="colorPick('#fdf2e9');" bgcolor="#fdf2e9"></td>
-                            <td class="colorpicker" onclick="colorPick('#fbeee6');" bgcolor="#fbeee6"></td>
-                        </tr>
-                        <tr class="colorpicker"> <!-- YO row 2 -->
-                            <td class="colorpicker" onclick="colorPick('#d4efdf');" bgcolor="#d4efdf"></td>
-                            <td class="colorpicker" onclick="colorPick('#d5f5e3');" bgcolor="#d5f5e3"></td>
-                            <td class="colorpicker" onclick="colorPick('#fcf3cf');" bgcolor="#fcf3cf"></td>
-                            <td class="colorpicker" onclick="colorPick('#fdebd0');" bgcolor="#fdebd0"></td>
-                            <td class="colorpicker" onclick="colorPick('#fae5d3');" bgcolor="#fae5d3"></td>
-                            <td class="colorpicker" onclick="colorPick('#f6ddcc');" bgcolor="#f6ddcc"></td>
-                        </tr>
-                        <tr class="colorpicker"> <!-- YO row 3 -->
-                            <td class="colorpicker" onclick="colorPick('#a9dfbf');" bgcolor="#a9dfbf"></td>
-                            <td class="colorpicker" onclick="colorPick('#abebc6');" bgcolor="#abebc6"></td>
-                            <td class="colorpicker" onclick="colorPick('#f9e79f');" bgcolor="#f9e79f"></td>
-                            <td class="colorpicker" onclick="colorPick('#fad7a0');" bgcolor="#fad7a0"></td>
-                            <td class="colorpicker" onclick="colorPick('#f5cba7');" bgcolor="#f5cba7"></td>
-                            <td class="colorpicker" onclick="colorPick('#edbb99');" bgcolor="#edbb99"></td>
-                        </tr>
-                        <tr class="colorpicker"> <!-- YO row 4 -->
-                            <td class="colorpicker" onclick="colorPick('#7dcea0');" bgcolor="#7dcea0"></td>
-                            <td class="colorpicker" onclick="colorPick('#82e0aa');" bgcolor="#82e0aa"></td>
-                            <td class="colorpicker" onclick="colorPick('#f7dc6f');" bgcolor="#f7dc6f"></td>
-                            <td class="colorpicker" onclick="colorPick('#f8c471');" bgcolor="#f8c471"></td>
-                            <td class="colorpicker" onclick="colorPick('#f0b27a');" bgcolor="#f0b27a"></td>
-                            <td class="colorpicker" onclick="colorPick('#e59866');" bgcolor="#e59866"></td>
-                        </tr>
-                        <tr class="colorpicker"> <!-- YO row 5 -->
-                            <td class="colorpicker" onclick="colorPick('#52be80');" bgcolor="#52be80"></td>
-                            <td class="colorpicker" onclick="colorPick('#f8d68d');" bgcolor="#58d68d"></td>
-                            <td class="colorpicker" onclick="colorPick('#f4d03f');" bgcolor="#f4d03f"></td>
-                            <td class="colorpicker" onclick="colorPick('#f5b041');" bgcolor="#f5b041"></td>
-                            <td class="colorpicker" onclick="colorPick('#eb984e');" bgcolor="#eb984e"></td>
-                            <td class="colorpicker" onclick="colorPick('#dc7633');" bgcolor="#dc7633"></td>
-                        </tr>
-                        <tr class="colorpicker"> <!-- YO row 6 -->
-                            <td class="colorpicker" onclick="colorPick('#27ae60');" bgcolor="#27ae60"></td>
-                            <td class="colorpicker" onclick="colorPick('#2ecc71');" bgcolor="#2ecc71"></td>
-                            <td class="colorpicker" onclick="colorPick('#f1c40f');" bgcolor="#f1c40f"></td>
-                            <td class="colorpicker" onclick="colorPick('#f39c12');" bgcolor="#f39c12"></td>
-                            <td class="colorpicker" onclick="colorPick('#e67e22');" bgcolor="#e67e22"></td>
-                            <td class="colorpicker" onclick="colorPick('#d35400');" bgcolor="#d35400"></td>
-                        </tr>
-                        <tr class="colorpicker"> <!-- YO row 7 -->
-                            <td class="colorpicker" onclick="colorPick('#229954');" bgcolor="#229954"></td>
-                            <td class="colorpicker" onclick="colorPick('#28b463');" bgcolor="#28b463"></td>
-                            <td class="colorpicker" onclick="colorPick('#d4ac0d');" bgcolor="#d4ac0d"></td>
-                            <td class="colorpicker" onclick="colorPick('#d68910');" bgcolor="#d68910"></td>
-                            <td class="colorpicker" onclick="colorPick('#ca6f1e');" bgcolor="#ca6f1e"></td>
-                            <td class="colorpicker" onclick="colorPick('#ba4a00');" bgcolor="#ba4a00"></td>
-                        </tr>
-                        <tr class="colorpicker"> <!-- YO row 8 -->
-                            <td class="colorpicker" onclick="colorPick('#1e8449');" bgcolor="#1e8449"></td>
-                            <td class="colorpicker" onclick="colorPick('#239b56');" bgcolor="#239b56"></td>
-                            <td class="colorpicker" onclick="colorPick('#b7950b');" bgcolor="#b7950b"></td>
-                            <td class="colorpicker" onclick="colorPick('#b9770e');" bgcolor="#b9770e"></td>
-                            <td class="colorpicker" onclick="colorPick('#af601a');" bgcolor="#af601a"></td>
-                            <td class="colorpicker" onclick="colorPick('#a04000');" bgcolor="#a04000"></td>
-                        </tr>
-                        <tr class="colorpicker"> <!-- YO row 9 -->
-                            <td class="colorpicker" onclick="colorPick('#196f3d');" bgcolor="#196f3d"></td>
-                            <td class="colorpicker" onclick="colorPick('#1d8348');" bgcolor="#1d8348"></td>
-                            <td class="colorpicker" onclick="colorPick('#9a7d0a');" bgcolor="#9a7d0a"></td>
-                            <td class="colorpicker" onclick="colorPick('#9c640c');" bgcolor="#9c640c"></td>
-                            <td class="colorpicker" onclick="colorPick('#935116');" bgcolor="#935116"></td>
-                            <td class="colorpicker" onclick="colorPick('#873600');" bgcolor="#873600"></td>
-                        </tr>
-                        <tr class="colorpicker"> <!-- YO row 10 -->
-                            <td class="colorpicker" onclick="colorPick('#145a32');" bgcolor="#145a32"></td>
-                            <td class="colorpicker" onclick="colorPick('#186a3b');" bgcolor="#186a3b"></td>
-                            <td class="colorpicker" onclick="colorPick('#7d6608');" bgcolor="#7d6608"></td>
-                            <td class="colorpicker" onclick="colorPick('#7e5109');" bgcolor="#7e5109"></td>
-                            <td class="colorpicker" onclick="colorPick('#784212');" bgcolor="#784212"></td>
-                            <td class="colorpicker" onclick="colorPick('#6e2c00');" bgcolor="#6e2c00"></td>
-                        </tr>
-                        <tr class="colorpicker"> <!-- BG row 1 -->
-                            <td class="colorpicker" onclick="colorPick('#f5eef8');" bgcolor="#f5eef8"></td>
-                            <td class="colorpicker" onclick="colorPick('#f4ecf7');" bgcolor="#f4ecf7"></td>
-                            <td class="colorpicker" onclick="colorPick('#eaf2f8');" bgcolor="#eaf2f8"></td>
-                            <td class="colorpicker" onclick="colorPick('#ebf5fb');" bgcolor="#ebf5fb"></td>
-                            <td class="colorpicker" onclick="colorPick('#e8f8f5');" bgcolor="#e8f8f5"></td>
-                            <td class="colorpicker" onclick="colorPick('#e8f6f3');" bgcolor="#e8f6f3"></td>
-                        </tr>
-                        <tr class="colorpicker"> <!-- BG row 2 -->
-                            <td class="colorpicker" onclick="colorPick('#ebdef0');" bgcolor="#ebdef0"></td>
-                            <td class="colorpicker" onclick="colorPick('#e8daef');" bgcolor="#e8daef"></td>
-                            <td class="colorpicker" onclick="colorPick('#d4e6f1');" bgcolor="#d4e6f1"></td>
-                            <td class="colorpicker" onclick="colorPick('#d6eaf8');" bgcolor="#d6eaf8"></td>
-                            <td class="colorpicker" onclick="colorPick('#d1f2eb');" bgcolor="#d1f2eb"></td>
-                            <td class="colorpicker" onclick="colorPick('#d0ece7');" bgcolor="#d0ece7"></td>
-                        </tr>
-                        <tr class="colorpicker"> <!-- BG row 3 -->
-                            <td class="colorpicker" onclick="colorPick('#d7bde2');" bgcolor="#d7bde2"></td>
-                            <td class="colorpicker" onclick="colorPick('#d2b4de');" bgcolor="#d2b4de"></td>
-                            <td class="colorpicker" onclick="colorPick('#a9cce3');" bgcolor="#a9cce3"></td>
-                            <td class="colorpicker" onclick="colorPick('#aed6f1');" bgcolor="#aed6f1"></td>
-                            <td class="colorpicker" onclick="colorPick('#a3e4d7');" bgcolor="#a3e4d7"></td>
-                            <td class="colorpicker" onclick="colorPick('#a2d9ce');" bgcolor="#a2d9ce"></td>
-                        </tr>
-                        <tr class="colorpicker"> <!-- BG row 4 -->
-                            <td class="colorpicker" onclick="colorPick('#c39bd3');" bgcolor="#c39bd3"></td>
-                            <td class="colorpicker" onclick="colorPick('#bb8fce');" bgcolor="#bb8fce"></td>
-                            <td class="colorpicker" onclick="colorPick('#7fb3d5');" bgcolor="#7fb3d5"></td>
-                            <td class="colorpicker" onclick="colorPick('#85c1e9');" bgcolor="#85c1e9"></td>
-                            <td class="colorpicker" onclick="colorPick('#76d7c4');" bgcolor="#76d7c4"></td>
-                            <td class="colorpicker" onclick="colorPick('#73c6b6');" bgcolor="#73c6b6"></td>
-                        </tr>
-                        <tr class="colorpicker"> <!-- BG row 5 -->
-                            <td class="colorpicker" onclick="colorPick('#af7ac5');" bgcolor="#af7ac5"></td>
-                            <td class="colorpicker" onclick="colorPick('#a569bd');" bgcolor="#a569bd"></td>
-                            <td class="colorpicker" onclick="colorPick('#5499c7');" bgcolor="#5499c7"></td>
-                            <td class="colorpicker" onclick="colorPick('#5dade2');" bgcolor="#5dade2"></td>
-                            <td class="colorpicker" onclick="colorPick('#48c9b0');" bgcolor="#48c9b0"></td>
-                            <td class="colorpicker" onclick="colorPick('#45b39d');" bgcolor="#45b39d"></td>
-                        </tr>
-                        <tr class="colorpicker"> <!-- BG row 6 -->
-                            <td class="colorpicker" onclick="colorPick('#9b59b6');" bgcolor="#9b59b6"></td>
-                            <td class="colorpicker" onclick="colorPick('#8e44ad');" bgcolor="#8e44ad"></td>
-                            <td class="colorpicker" onclick="colorPick('#2980b9');" bgcolor="#2980b9"></td>
-                            <td class="colorpicker" onclick="colorPick('#3498db');" bgcolor="#3498bd"></td>
-                            <td class="colorpicker" onclick="colorPick('#1abc9c');" bgcolor="#1abc9c"></td>
-                            <td class="colorpicker" onclick="colorPick('#16a085');" bgcolor="#16a085"></td>
-                        </tr>
-                        <tr class="colorpicker"> <!-- BG row 7 -->
-                            <td class="colorpicker" onclick="colorPick('#884ea0');" bgcolor="#884ea0"></td>
-                            <td class="colorpicker" onclick="colorPick('#7d3c98');" bgcolor="#7d3c98"></td>
-                            <td class="colorpicker" onclick="colorPick('#2471a3');" bgcolor="#2471a3"></td>
-                            <td class="colorpicker" onclick="colorPick('#2e86c1');" bgcolor="#2e86c1"></td>
-                            <td class="colorpicker" onclick="colorPick('#17a589');" bgcolor="#17a589"></td>
-                            <td class="colorpicker" onclick="colorPick('#138d75');" bgcolor="#138d75"></td>
-                        </tr>
-                        <tr class="colorpicker"> <!-- BG row 8 -->
-                            <td class="colorpicker" onclick="colorPick('#76448a');" bgcolor="#76448a"></td>
-                            <td class="colorpicker" onclick="colorPick('#6c3483');" bgcolor="#6c3483"></td>
-                            <td class="colorpicker" onclick="colorPick('#1f618d');" bgcolor="#1f618d"></td>
-                            <td class="colorpicker" onclick="colorPick('#2874a6');" bgcolor="#2874a6"></td>
-                            <td class="colorpicker" onclick="colorPick('#148f77');" bgcolor="#148f77"></td>
-                            <td class="colorpicker" onclick="colorPick('#117a65');" bgcolor="#117a65"></td>
-                        </tr>
-                        <tr class="colorpicker"> <!-- BG row 9 -->
-                            <td class="colorpicker" onclick="colorPick('#633974');" bgcolor="#633974"></td>
-                            <td class="colorpicker" onclick="colorPick('#5b2c6f');" bgcolor="#5b2c6f"></td>
-                            <td class="colorpicker" onclick="colorPick('#1a5276');" bgcolor="#1a5276"></td>
-                            <td class="colorpicker" onclick="colorPick('#21618c');" bgcolor="#21618c"></td>
-                            <td class="colorpicker" onclick="colorPick('#117864');" bgcolor="#117864"></td>
-                            <td class="colorpicker" onclick="colorPick('#0e6655');" bgcolor="#0e6655"></td>
-                        </tr>
-                        <tr class="colorpicker"> <!-- BG row 10 -->
-                            <td class="colorpicker" onclick="colorPick('#512e5f');" bgcolor="#512e5f"></td>
-                            <td class="colorpicker" onclick="colorPick('#4a235a');" bgcolor="#4a235a"></td>
-                            <td class="colorpicker" onclick="colorPick('#154360');" bgcolor="#154360"></td>
-                            <td class="colorpicker" onclick="colorPick('#1b4f72');" bgcolor="#1b4f72"></td>
-                            <td class="colorpicker" onclick="colorPick('#0e6251');" bgcolor="#0e6251"></td>
-                            <td class="colorpicker" onclick="colorPick('#0b5345');" bgcolor="#0b5345"></td>
-                        </tr>
-                        <tr class="colorpicker"> <!-- R row 1 -->
-                            <td class="colorpicker" onclick="colorPick('#f9ebea');" bgcolor="#f9ebea"></td>
-                            <td class="colorpicker" onclick="colorPick('#f2d7d5');" bgcolor="#f2d7d5"></td>
-                            <td class="colorpicker" onclick="colorPick('#e6b0aa');" bgcolor="#e6b0aa"></td>
-                            <td class="colorpicker" onclick="colorPick('#fdedec');" bgcolor="#fdedec"></td>
-                            <td class="colorpicker" onclick="colorPick('#fadbd8');" bgcolor="#fadbd8"></td>
-                            <td class="colorpicker" onclick="colorPick('#f5b7b1');" bgcolor="#f5b7b1"></td>
-                        </tr>
-                        <tr class="colorpicker"> <!-- R row 2 -->
-                            <td class="colorpicker" onclick="colorPick('#d98880');" bgcolor="#d98880"></td>
-                            <td class="colorpicker" onclick="colorPick('#cd6155');" bgcolor="#cd6155"></td>
-                            <td class="colorpicker" onclick="colorPick('#c0392b');" bgcolor="#c0392b"></td>
-                            <td class="colorpicker" onclick="colorPick('#f1948a');" bgcolor="#f1948a"></td>
-                            <td class="colorpicker" onclick="colorPick('#ec7063');" bgcolor="#ec7063"></td>
-                            <td class="colorpicker" onclick="colorPick('#e74c3c');" bgcolor="#e74c3c"></td>
-                        </tr>
-                        <tr class="colorpicker"> <!-- R row 3 -->
-                            <td class="colorpicker" onclick="colorPick('#a93226');" bgcolor="#a93226"></td>
-                            <td class="colorpicker" onclick="colorPick('#922b21');" bgcolor="#922b21"></td>
-                            <td class="colorpicker" onclick="colorPick('#7b241c');" bgcolor="#7b241c"></td>
-                            <td class="colorpicker" onclick="colorPick('#cb4335');" bgcolor="#cb4335"></td>
-                            <td class="colorpicker" onclick="colorPick('#b03a2e');" bgcolor="#b03a2e"></td>
-                            <td class="colorpicker" onclick="colorPick('#943126');" bgcolor="#943126"></td>
-                        </tr>
-                        <tr class="colorpicker"> <!-- R row 4 -->
-                            <td class="colorpicker" onclick="colorPick('#641e16');" bgcolor="#641e16"></td>
-                            <td class="colorpicker" onclick="colorPick('#78281f');" bgcolor="#78281f"></td>
-                        </tr>
-                    </table>
-
-                  <h4>Size</h4>
+                    <h4>Size</h4>
                     <table class="sizepicker">
-                      <tr class="sizepicker">
-                        <td class="sizepicker" onclick="sizepick(1);">
-                          1 px
-                        </td>
-                        <td class="sizepicker" onclick="sizepick(3);">
-                          3 px
-                        </td>
-                        <td class="sizepicker" onclick="sizepick(5);">
-                          5 px
-                        </td>
-                        <td class="sizepicker" onclick="sizepick(7);">
-                          7 px
-                        </td>
-                        <td class="sizepicker" onclick="sizepick(10);">
-                          10 px
-                        </td>
-                      </tr>
+                        <tr class="sizepicker">
+                            <td class="sizepicker" onclick="sizepick(1);">
+                                1 px
+                            </td>
+                            <td class="sizepicker" onclick="sizepick(3);">
+                                3 px
+                            </td>
+                            <td class="sizepicker" onclick="sizepick(5);">
+                                5 px
+                            </td>
+                            <td class="sizepicker" onclick="sizepick(7);">
+                                7 px
+                            </td>
+                            <td class="sizepicker" onclick="sizepick(10);">
+                                10 px
+                            </td>
+                        </tr>
                     </table>
 
                     <h4>Opacity</h4>
@@ -374,12 +106,326 @@
                     <br /><br />
                     <a href="#" class="button" id="btn-download" download="drawing.png">Download Canvas</a>
                 </div>
-            </div>
-            <a href="index.html">Home</a>
-        </div>
+                <div class="right">
+                    <h4>Color</h4>
+                    <table class="colorpicker">
+                        <tr class="colorpicker">
+                            <!-- row 0 -->
+                            <td class="colorpicker" onclick="colorPick('#ffffff');" bgcolor="#ffffff"></td>
+                            <td class="colorpicker" onclick="colorPick('#000000');" bgcolor="#000000"></td>
+                        </tr>
+                        <tr class="colorpicker">
+                            <!-- WHITE, GRAY, BLACK -->
+                            <!-- row 1 -->
+                            <td class="colorpicker" onclick="colorPick('#fdfefe');" bgcolor="#fdfefe"></td>
+                            <td class="colorpicker" onclick="colorPick('#f8f9f9');" bgcolor="#f8f9f9"></td>
+                            <td class="colorpicker" onclick="colorPick('#f4f6f6');" bgcolor="#f4f6f6"></td>
+                            <td class="colorpicker" onclick="colorPick('#f2f4f4');" bgcolor="#f2f4f4"></td>
+                            <td class="colorpicker" onclick="colorPick('#ebedef');" bgcolor="#ebedef"></td>
+                            <td class="colorpicker" onclick="colorPick('#eaecee');" bgcolor="#eaecee"></td>
+                        </tr>
+                        <tr class="colorpicker">
+                            <!-- row 2 -->
+                            <td class="colorpicker" onclick="colorPick('#fbfcfc');" bgcolor="#fbfcfc"></td>
+                            <td class="colorpicker" onclick="colorPick('#f2f3f4');" bgcolor="#f2f3f4"></td>
+                            <td class="colorpicker" onclick="colorPick('#eaeded');" bgcolor="#eaeded"></td>
+                            <td class="colorpicker" onclick="colorPick('#e5e8e8');" bgcolor="#e5e8e8"></td>
+                            <td class="colorpicker" onclick="colorPick('#d6dbdf');" bgcolor="#d6dbdf"></td>
+                            <td class="colorpicker" onclick="colorPick('#d5d8dc');" bgcolor="#d5d8dc"></td>
+                        </tr>
+                        <tr class="colorpicker">
+                            <!-- row 3 -->
+                            <td class="colorpicker" onclick="colorPick('#f7f9f9');" bgcolor="#f7f9f9"></td>
+                            <td class="colorpicker" onclick="colorPick('#e5e7e9');" bgcolor="#e5e7e9"></td>
+                            <td class="colorpicker" onclick="colorPick('#d5dbdb');" bgcolor="#d5dbdb"></td>
+                            <td class="colorpicker" onclick="colorPick('#ccd1d1');" bgcolor="#ccd1d1"></td>
+                            <td class="colorpicker" onclick="colorPick('#aeb6bf');" bgcolor="#aeb6bf"></td>
+                            <td class="colorpicker" onclick="colorPick('#abb2b9');" bgcolor="#abb2b9"></td>
+                        </tr>
+                        <tr>
+                            <!-- row 4 -->
+                            <td class="colorpicker" onclick="colorPick('#f4f6f7');" bgcolor="#f4f6f7"></td>
+                            <td class="colorpicker" onclick="colorPick('#d7dbdd');" bgcolor="#d7dbdd"></td>
+                            <td class="colorpicker" onclick="colorPick('#bfc9ca');" bgcolor="#bfc9ca"></td>
+                            <td class="colorpicker" onclick="colorPick('#b2babb');" bgcolor="#b2babb"></td>
+                            <td class="colorpicker" onclick="colorPick('#85929e');" bgcolor="#85929e"></td>
+                            <td class="colorpicker" onclick="colorPick('#808b96');" bgcolor="#808b96"></td>
+                        </tr>
+                        <tr class="colorpicker">
+                            <!-- row 5 -->
+                            <td class="colorpicker" onclick="colorPick('#f0f3f4');" bgcolor="#f0f3f4"></td>
+                            <td class="colorpicker" onclick="colorPick('#cacfd2');" bgcolor="#cacfd2"></td>
+                            <td class="colorpicker" onclick="colorPick('#aab7b8');" bgcolor="#aab7b8"></td>
+                            <td class="colorpicker" onclick="colorPick('#99a3a4');" bgcolor="#99a3a4"></td>
+                            <td class="colorpicker" onclick="colorPick('#5d6d7e');" bgcolor="#5d6d7e"></td>
+                            <td class="colorpicker" onclick="colorPick('#566573');" bgcolor="#566573"></td>
+                        </tr>
+                        <tr class="colorpicker">
+                            <!-- row 6 -->
+                            <td class="colorpicker" onclick="colorPick('#ecf0f1');" bgcolor="#ecf0f1"></td>
+                            <td class="colorpicker" onclick="colorPick('#bdc3c7');" bgcolor="#bdc3c7"></td>
+                            <td class="colorpicker" onclick="colorPick('#95a5a6');" bgcolor="#95a5a6"></td>
+                            <td class="colorpicker" onclick="colorPick('#7f8c8d');" bgcolor="#7f8c8d"></td>
+                            <td class="colorpicker" onclick="colorPick('#34495e');" bgcolor="#34495e"></td>
+                            <td class="colorpicker" onclick="colorPick('#2c3e50');" bgcolor="#2c3e50"></td>
+                        </tr>
+                        <tr class="colorpicker">
+                            <!-- row 7 -->
+                            <td class="colorpicker" onclick="colorPick('#d0d3d4');" bgcolor="#d0d3d4"></td>
+                            <td class="colorpicker" onclick="colorPick('#a6acaf');" bgcolor="#a6acaf"></td>
+                            <td class="colorpicker" onclick="colorPick('#839192');" bgcolor="#839192"></td>
+                            <td class="colorpicker" onclick="colorPick('#707b7c');" bgcolor="#707b7c"></td>
+                            <td class="colorpicker" onclick="colorPick('#2e4053');" bgcolor="#2e4053"></td>
+                            <td class="colorpicker" onclick="colorPick('#273746');" bgcolor="#273746"></td>
+                        </tr>
+                        <tr class="colorpicker">
+                            <!-- row 8 -->
+                            <td class="colorpicker" onclick="colorPick('#b3b6b7');" bgcolor="#b3b6b7"></td>
+                            <td class="colorpicker" onclick="colorPick('#909497');" bgcolor="#909497"></td>
+                            <td class="colorpicker" onclick="colorPick('#717d7e');" bgcolor="#717d7e"></td>
+                            <td class="colorpicker" onclick="colorPick('#616a6b');" bgcolor="#616a6b"></td>
+                            <td class="colorpicker" onclick="colorPick('#283747');" bgcolor="#283747"></td>
+                            <td class="colorpicker" onclick="colorPick('#212f3d');" bgcolor="212f3d"></td>
+                        </tr>
+                        <tr class="colorpicker">
+                            <!-- row 9 -->
+                            <td class="colorpicker" onclick="colorPick('#979a9a');" bgcolor="#979a9a"></td>
+                            <td class="colorpicker" onclick="colorPick('#797d7f');" bgcolor="#797d7f"></td>
+                            <td class="colorpicker" onclick="colorPick('#5f6a6a');" bgcolor="#5f6a6a"></td>
+                            <td class="colorpicker" onclick="colorPick('#515a5a');" bgcolor="#515a5a"></td>
+                            <td class="colorpicker" onclick="colorPick('#212f3c');" bgcolor="#212f3c"></td>
+                            <td class="colorpicker" onclick="colorPick('#1c2833');" bgcolor="#1c2833"></td>
+                        </tr>
+                        <tr class="colorpicker">
+                            <!-- row 10 -->
+                            <td class="colorpicker" onclick="colorPick('#7b7d7d');" bgcolor="#7b7b7d"></td>
+                            <td class="colorpicker" onclick="colorPick('#626567');" bgcolor="#626567"></td>
+                            <td class="colorpicker" onclick="colorPick('#4d5656');" bgcolor="#4d5656"></td>
+                            <td class="colorpicker" onclick="colorPick('#424949');" bgcolor="#424949"></td>
+                            <td class="colorpicker" onclick="colorPick('#1b2631');" bgcolor="#1b2631"></td>
+                            <td class="colorpicker" onclick="colorPick('#17202a');" bgcolor="#17202a"></td>
+                        </tr>
+                        <tr class="colorpicker">
+                            <!-- YO row 1 -->
+                            <td class="colorpicker" onclick="colorPick('#e9f7ef');" bgcolor="#e9f7ef"></td>
+                            <td class="colorpicker" onclick="colorPick('#eafaf1');" bgcolor="#eafaf1"></td>
+                            <td class="colorpicker" onclick="colorPick('#fef9e7');" bgcolor="#fef9e7"></td>
+                            <td class="colorpicker" onclick="colorPick('#fef5e7');" bgcolor="#fef5e7"></td>
+                            <td class="colorpicker" onclick="colorPick('#fdf2e9');" bgcolor="#fdf2e9"></td>
+                            <td class="colorpicker" onclick="colorPick('#fbeee6');" bgcolor="#fbeee6"></td>
+                        </tr>
+                        <tr class="colorpicker">
+                            <!-- YO row 2 -->
+                            <td class="colorpicker" onclick="colorPick('#d4efdf');" bgcolor="#d4efdf"></td>
+                            <td class="colorpicker" onclick="colorPick('#d5f5e3');" bgcolor="#d5f5e3"></td>
+                            <td class="colorpicker" onclick="colorPick('#fcf3cf');" bgcolor="#fcf3cf"></td>
+                            <td class="colorpicker" onclick="colorPick('#fdebd0');" bgcolor="#fdebd0"></td>
+                            <td class="colorpicker" onclick="colorPick('#fae5d3');" bgcolor="#fae5d3"></td>
+                            <td class="colorpicker" onclick="colorPick('#f6ddcc');" bgcolor="#f6ddcc"></td>
+                        </tr>
+                        <tr class="colorpicker">
+                            <!-- YO row 3 -->
+                            <td class="colorpicker" onclick="colorPick('#a9dfbf');" bgcolor="#a9dfbf"></td>
+                            <td class="colorpicker" onclick="colorPick('#abebc6');" bgcolor="#abebc6"></td>
+                            <td class="colorpicker" onclick="colorPick('#f9e79f');" bgcolor="#f9e79f"></td>
+                            <td class="colorpicker" onclick="colorPick('#fad7a0');" bgcolor="#fad7a0"></td>
+                            <td class="colorpicker" onclick="colorPick('#f5cba7');" bgcolor="#f5cba7"></td>
+                            <td class="colorpicker" onclick="colorPick('#edbb99');" bgcolor="#edbb99"></td>
+                        </tr>
+                        <tr class="colorpicker">
+                            <!-- YO row 4 -->
+                            <td class="colorpicker" onclick="colorPick('#7dcea0');" bgcolor="#7dcea0"></td>
+                            <td class="colorpicker" onclick="colorPick('#82e0aa');" bgcolor="#82e0aa"></td>
+                            <td class="colorpicker" onclick="colorPick('#f7dc6f');" bgcolor="#f7dc6f"></td>
+                            <td class="colorpicker" onclick="colorPick('#f8c471');" bgcolor="#f8c471"></td>
+                            <td class="colorpicker" onclick="colorPick('#f0b27a');" bgcolor="#f0b27a"></td>
+                            <td class="colorpicker" onclick="colorPick('#e59866');" bgcolor="#e59866"></td>
+                        </tr>
+                        <tr class="colorpicker">
+                            <!-- YO row 5 -->
+                            <td class="colorpicker" onclick="colorPick('#52be80');" bgcolor="#52be80"></td>
+                            <td class="colorpicker" onclick="colorPick('#f8d68d');" bgcolor="#58d68d"></td>
+                            <td class="colorpicker" onclick="colorPick('#f4d03f');" bgcolor="#f4d03f"></td>
+                            <td class="colorpicker" onclick="colorPick('#f5b041');" bgcolor="#f5b041"></td>
+                            <td class="colorpicker" onclick="colorPick('#eb984e');" bgcolor="#eb984e"></td>
+                            <td class="colorpicker" onclick="colorPick('#dc7633');" bgcolor="#dc7633"></td>
+                        </tr>
+                        <tr class="colorpicker">
+                            <!-- YO row 6 -->
+                            <td class="colorpicker" onclick="colorPick('#27ae60');" bgcolor="#27ae60"></td>
+                            <td class="colorpicker" onclick="colorPick('#2ecc71');" bgcolor="#2ecc71"></td>
+                            <td class="colorpicker" onclick="colorPick('#f1c40f');" bgcolor="#f1c40f"></td>
+                            <td class="colorpicker" onclick="colorPick('#f39c12');" bgcolor="#f39c12"></td>
+                            <td class="colorpicker" onclick="colorPick('#e67e22');" bgcolor="#e67e22"></td>
+                            <td class="colorpicker" onclick="colorPick('#d35400');" bgcolor="#d35400"></td>
+                        </tr>
+                        <tr class="colorpicker">
+                            <!-- YO row 7 -->
+                            <td class="colorpicker" onclick="colorPick('#229954');" bgcolor="#229954"></td>
+                            <td class="colorpicker" onclick="colorPick('#28b463');" bgcolor="#28b463"></td>
+                            <td class="colorpicker" onclick="colorPick('#d4ac0d');" bgcolor="#d4ac0d"></td>
+                            <td class="colorpicker" onclick="colorPick('#d68910');" bgcolor="#d68910"></td>
+                            <td class="colorpicker" onclick="colorPick('#ca6f1e');" bgcolor="#ca6f1e"></td>
+                            <td class="colorpicker" onclick="colorPick('#ba4a00');" bgcolor="#ba4a00"></td>
+                        </tr>
+                        <tr class="colorpicker">
+                            <!-- YO row 8 -->
+                            <td class="colorpicker" onclick="colorPick('#1e8449');" bgcolor="#1e8449"></td>
+                            <td class="colorpicker" onclick="colorPick('#239b56');" bgcolor="#239b56"></td>
+                            <td class="colorpicker" onclick="colorPick('#b7950b');" bgcolor="#b7950b"></td>
+                            <td class="colorpicker" onclick="colorPick('#b9770e');" bgcolor="#b9770e"></td>
+                            <td class="colorpicker" onclick="colorPick('#af601a');" bgcolor="#af601a"></td>
+                            <td class="colorpicker" onclick="colorPick('#a04000');" bgcolor="#a04000"></td>
+                        </tr>
+                        <tr class="colorpicker">
+                            <!-- YO row 9 -->
+                            <td class="colorpicker" onclick="colorPick('#196f3d');" bgcolor="#196f3d"></td>
+                            <td class="colorpicker" onclick="colorPick('#1d8348');" bgcolor="#1d8348"></td>
+                            <td class="colorpicker" onclick="colorPick('#9a7d0a');" bgcolor="#9a7d0a"></td>
+                            <td class="colorpicker" onclick="colorPick('#9c640c');" bgcolor="#9c640c"></td>
+                            <td class="colorpicker" onclick="colorPick('#935116');" bgcolor="#935116"></td>
+                            <td class="colorpicker" onclick="colorPick('#873600');" bgcolor="#873600"></td>
+                        </tr>
+                        <tr class="colorpicker">
+                            <!-- YO row 10 -->
+                            <td class="colorpicker" onclick="colorPick('#145a32');" bgcolor="#145a32"></td>
+                            <td class="colorpicker" onclick="colorPick('#186a3b');" bgcolor="#186a3b"></td>
+                            <td class="colorpicker" onclick="colorPick('#7d6608');" bgcolor="#7d6608"></td>
+                            <td class="colorpicker" onclick="colorPick('#7e5109');" bgcolor="#7e5109"></td>
+                            <td class="colorpicker" onclick="colorPick('#784212');" bgcolor="#784212"></td>
+                            <td class="colorpicker" onclick="colorPick('#6e2c00');" bgcolor="#6e2c00"></td>
+                        </tr>
+                        <tr class="colorpicker">
+                            <!-- BG row 1 -->
+                            <td class="colorpicker" onclick="colorPick('#f5eef8');" bgcolor="#f5eef8"></td>
+                            <td class="colorpicker" onclick="colorPick('#f4ecf7');" bgcolor="#f4ecf7"></td>
+                            <td class="colorpicker" onclick="colorPick('#eaf2f8');" bgcolor="#eaf2f8"></td>
+                            <td class="colorpicker" onclick="colorPick('#ebf5fb');" bgcolor="#ebf5fb"></td>
+                            <td class="colorpicker" onclick="colorPick('#e8f8f5');" bgcolor="#e8f8f5"></td>
+                            <td class="colorpicker" onclick="colorPick('#e8f6f3');" bgcolor="#e8f6f3"></td>
+                        </tr>
+                        <tr class="colorpicker">
+                            <!-- BG row 2 -->
+                            <td class="colorpicker" onclick="colorPick('#ebdef0');" bgcolor="#ebdef0"></td>
+                            <td class="colorpicker" onclick="colorPick('#e8daef');" bgcolor="#e8daef"></td>
+                            <td class="colorpicker" onclick="colorPick('#d4e6f1');" bgcolor="#d4e6f1"></td>
+                            <td class="colorpicker" onclick="colorPick('#d6eaf8');" bgcolor="#d6eaf8"></td>
+                            <td class="colorpicker" onclick="colorPick('#d1f2eb');" bgcolor="#d1f2eb"></td>
+                            <td class="colorpicker" onclick="colorPick('#d0ece7');" bgcolor="#d0ece7"></td>
+                        </tr>
+                        <tr class="colorpicker">
+                            <!-- BG row 3 -->
+                            <td class="colorpicker" onclick="colorPick('#d7bde2');" bgcolor="#d7bde2"></td>
+                            <td class="colorpicker" onclick="colorPick('#d2b4de');" bgcolor="#d2b4de"></td>
+                            <td class="colorpicker" onclick="colorPick('#a9cce3');" bgcolor="#a9cce3"></td>
+                            <td class="colorpicker" onclick="colorPick('#aed6f1');" bgcolor="#aed6f1"></td>
+                            <td class="colorpicker" onclick="colorPick('#a3e4d7');" bgcolor="#a3e4d7"></td>
+                            <td class="colorpicker" onclick="colorPick('#a2d9ce');" bgcolor="#a2d9ce"></td>
+                        </tr>
+                        <tr class="colorpicker">
+                            <!-- BG row 4 -->
+                            <td class="colorpicker" onclick="colorPick('#c39bd3');" bgcolor="#c39bd3"></td>
+                            <td class="colorpicker" onclick="colorPick('#bb8fce');" bgcolor="#bb8fce"></td>
+                            <td class="colorpicker" onclick="colorPick('#7fb3d5');" bgcolor="#7fb3d5"></td>
+                            <td class="colorpicker" onclick="colorPick('#85c1e9');" bgcolor="#85c1e9"></td>
+                            <td class="colorpicker" onclick="colorPick('#76d7c4');" bgcolor="#76d7c4"></td>
+                            <td class="colorpicker" onclick="colorPick('#73c6b6');" bgcolor="#73c6b6"></td>
+                        </tr>
+                        <tr class="colorpicker">
+                            <!-- BG row 5 -->
+                            <td class="colorpicker" onclick="colorPick('#af7ac5');" bgcolor="#af7ac5"></td>
+                            <td class="colorpicker" onclick="colorPick('#a569bd');" bgcolor="#a569bd"></td>
+                            <td class="colorpicker" onclick="colorPick('#5499c7');" bgcolor="#5499c7"></td>
+                            <td class="colorpicker" onclick="colorPick('#5dade2');" bgcolor="#5dade2"></td>
+                            <td class="colorpicker" onclick="colorPick('#48c9b0');" bgcolor="#48c9b0"></td>
+                            <td class="colorpicker" onclick="colorPick('#45b39d');" bgcolor="#45b39d"></td>
+                        </tr>
+                        <tr class="colorpicker">
+                            <!-- BG row 6 -->
+                            <td class="colorpicker" onclick="colorPick('#9b59b6');" bgcolor="#9b59b6"></td>
+                            <td class="colorpicker" onclick="colorPick('#8e44ad');" bgcolor="#8e44ad"></td>
+                            <td class="colorpicker" onclick="colorPick('#2980b9');" bgcolor="#2980b9"></td>
+                            <td class="colorpicker" onclick="colorPick('#3498db');" bgcolor="#3498bd"></td>
+                            <td class="colorpicker" onclick="colorPick('#1abc9c');" bgcolor="#1abc9c"></td>
+                            <td class="colorpicker" onclick="colorPick('#16a085');" bgcolor="#16a085"></td>
+                        </tr>
+                        <tr class="colorpicker">
+                            <!-- BG row 7 -->
+                            <td class="colorpicker" onclick="colorPick('#884ea0');" bgcolor="#884ea0"></td>
+                            <td class="colorpicker" onclick="colorPick('#7d3c98');" bgcolor="#7d3c98"></td>
+                            <td class="colorpicker" onclick="colorPick('#2471a3');" bgcolor="#2471a3"></td>
+                            <td class="colorpicker" onclick="colorPick('#2e86c1');" bgcolor="#2e86c1"></td>
+                            <td class="colorpicker" onclick="colorPick('#17a589');" bgcolor="#17a589"></td>
+                            <td class="colorpicker" onclick="colorPick('#138d75');" bgcolor="#138d75"></td>
+                        </tr>
+                        <tr class="colorpicker">
+                            <!-- BG row 8 -->
+                            <td class="colorpicker" onclick="colorPick('#76448a');" bgcolor="#76448a"></td>
+                            <td class="colorpicker" onclick="colorPick('#6c3483');" bgcolor="#6c3483"></td>
+                            <td class="colorpicker" onclick="colorPick('#1f618d');" bgcolor="#1f618d"></td>
+                            <td class="colorpicker" onclick="colorPick('#2874a6');" bgcolor="#2874a6"></td>
+                            <td class="colorpicker" onclick="colorPick('#148f77');" bgcolor="#148f77"></td>
+                            <td class="colorpicker" onclick="colorPick('#117a65');" bgcolor="#117a65"></td>
+                        </tr>
+                        <tr class="colorpicker">
+                            <!-- BG row 9 -->
+                            <td class="colorpicker" onclick="colorPick('#633974');" bgcolor="#633974"></td>
+                            <td class="colorpicker" onclick="colorPick('#5b2c6f');" bgcolor="#5b2c6f"></td>
+                            <td class="colorpicker" onclick="colorPick('#1a5276');" bgcolor="#1a5276"></td>
+                            <td class="colorpicker" onclick="colorPick('#21618c');" bgcolor="#21618c"></td>
+                            <td class="colorpicker" onclick="colorPick('#117864');" bgcolor="#117864"></td>
+                            <td class="colorpicker" onclick="colorPick('#0e6655');" bgcolor="#0e6655"></td>
+                        </tr>
+                        <tr class="colorpicker">
+                            <!-- BG row 10 -->
+                            <td class="colorpicker" onclick="colorPick('#512e5f');" bgcolor="#512e5f"></td>
+                            <td class="colorpicker" onclick="colorPick('#4a235a');" bgcolor="#4a235a"></td>
+                            <td class="colorpicker" onclick="colorPick('#154360');" bgcolor="#154360"></td>
+                            <td class="colorpicker" onclick="colorPick('#1b4f72');" bgcolor="#1b4f72"></td>
+                            <td class="colorpicker" onclick="colorPick('#0e6251');" bgcolor="#0e6251"></td>
+                            <td class="colorpicker" onclick="colorPick('#0b5345');" bgcolor="#0b5345"></td>
+                        </tr>
+                        <tr class="colorpicker">
+                            <!-- R row 1 -->
+                            <td class="colorpicker" onclick="colorPick('#f9ebea');" bgcolor="#f9ebea"></td>
+                            <td class="colorpicker" onclick="colorPick('#f2d7d5');" bgcolor="#f2d7d5"></td>
+                            <td class="colorpicker" onclick="colorPick('#e6b0aa');" bgcolor="#e6b0aa"></td>
+                            <td class="colorpicker" onclick="colorPick('#fdedec');" bgcolor="#fdedec"></td>
+                            <td class="colorpicker" onclick="colorPick('#fadbd8');" bgcolor="#fadbd8"></td>
+                            <td class="colorpicker" onclick="colorPick('#f5b7b1');" bgcolor="#f5b7b1"></td>
+                        </tr>
+                        <tr class="colorpicker">
+                            <!-- R row 2 -->
+                            <td class="colorpicker" onclick="colorPick('#d98880');" bgcolor="#d98880"></td>
+                            <td class="colorpicker" onclick="colorPick('#cd6155');" bgcolor="#cd6155"></td>
+                            <td class="colorpicker" onclick="colorPick('#c0392b');" bgcolor="#c0392b"></td>
+                            <td class="colorpicker" onclick="colorPick('#f1948a');" bgcolor="#f1948a"></td>
+                            <td class="colorpicker" onclick="colorPick('#ec7063');" bgcolor="#ec7063"></td>
+                            <td class="colorpicker" onclick="colorPick('#e74c3c');" bgcolor="#e74c3c"></td>
+                        </tr>
+                        <tr class="colorpicker">
+                            <!-- R row 3 -->
+                            <td class="colorpicker" onclick="colorPick('#a93226');" bgcolor="#a93226"></td>
+                            <td class="colorpicker" onclick="colorPick('#922b21');" bgcolor="#922b21"></td>
+                            <td class="colorpicker" onclick="colorPick('#7b241c');" bgcolor="#7b241c"></td>
+                            <td class="colorpicker" onclick="colorPick('#cb4335');" bgcolor="#cb4335"></td>
+                            <td class="colorpicker" onclick="colorPick('#b03a2e');" bgcolor="#b03a2e"></td>
+                            <td class="colorpicker" onclick="colorPick('#943126');" bgcolor="#943126"></td>
+                        </tr>
+                        <tr class="colorpicker">
+                            <!-- R row 4 -->
+                            <td class="colorpicker" onclick="colorPick('#641e16');" bgcolor="#641e16"></td>
+                            <td class="colorpicker" onclick="colorPick('#78281f');" bgcolor="#78281f"></td>
+                        </tr>
+                    </table>
 
-        <footer class="toolbar toolbar-footer">
-            <p class="title">Produced <span class="icon icon-star"> Darlene Zouras</p>
+                </div>
+            </div>
+        </div>
+        <a href="index.html">Home</a>
+
+    <footer class="toolbar toolbar-footer">
+        <p class="title">Produced <span class="icon icon-star"> Darlene Zouras</p>
         </footer>
     </div>
 </body>

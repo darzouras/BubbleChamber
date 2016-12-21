@@ -29,8 +29,7 @@ firebase.initializeApp(config);
 
 function createWindow () {
   mainWindow = new BrowserWindow({
-    // FIXME on smaller resolutions the controls extend further than the window allows, but there is no scrolling
-    width: 750,
+    width: 850,
     height: 950,
   });
 

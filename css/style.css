@@ -13,7 +13,7 @@ td.colorpicker {
 
 div.wrapper {
     width: 100%;
-    margin: 0 auto;
+    margin: 15px;
     overflow: hidden;
     display: block;
 }
@@ -22,14 +22,11 @@ div.left {
     padding-left: 25px;
     padding-top: 50px;
     display: inline-block;
-    width: 472px;
-    height: 622px;
     float: left;
 }
 
 div.right {
     display: inline-block;
-    width: 200px;
     float: right;
     padding-left: 10px;
 }
