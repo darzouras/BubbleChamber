@@ -1,4 +1,6 @@
 // FIXME drawings does not match with cursor when using scrolling
+// FIXME write a canvas object that is inserted into the page, allow the height and width to be set (with some max limits).
+// FIXME write a button that wipes the entire canvas by deleting the active canvas object and creating a new one.
 
 var currentColor = "#666666";
 var currentSize = 5;
