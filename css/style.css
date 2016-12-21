@@ -27,7 +27,7 @@ div.left {
 
 div.right {
     display: inline-block;
-    float: right;
+    float: left;
     padding-left: 10px;
 }
 
