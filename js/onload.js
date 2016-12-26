@@ -107,6 +107,7 @@ window.onload = function() {
         }
     }
 
+    // saves the content of the canvas to local machine
     var button = document.getElementById('btn-download');
     button.addEventListener('click', function (e) {
       var dataURL = canvas.toDataURL('image/png');

@@ -16,8 +16,25 @@ let config = {
     messagingSenderId: "604263226065"
 };
 firebase.initializeApp(config);
-// var storage = firebase.storage();
-// var storageRef = storage.ref();
+
+// USER AUTHENTICATION
+var user = firebase.auth().currentUser;
+
+
+var name, email, photoUrl, uid;
+if (user != null) {
+    name = user.displayName;
+    email = user.email;
+    photoUrl = user.photoURL;
+    uid = user.uid; // DO NOT USE THIS VALUE TO AUTHENTICATE WITH BACKEND
+                    // use user.getToken() instead, if you need to.
+}
+
+// firebase storage
+/* var storage = firebase.storage();
+var storageRef = storage.ref();
+var imagesRef = storageRef.child('images');
+var spaceRef = storageRef.child('images/space.jpg'); */
 
 /* mysql.pool.connect(function(err) {
   if(err){
@@ -40,6 +57,16 @@ function createWindow () {
     mainWindow.icon = 'resources/1024_bcicon.icns';
   }
 
+  // FIXME mofe user authentication if/else here to better manage what pops up?
+  /* firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+        mainWindow.loadURL(`file://${__dirname}/paint.html`);
+      }
+      else {
+
+      }
+  });
+  */
   mainWindow.loadURL(`file://${__dirname}/paint.html`);
   // mainWindow.webContents.openDevTools();
 
