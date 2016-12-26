@@ -3,10 +3,7 @@
 
 <head>
     <link rel="stylesheet" href="css/photon.css">
-    <script src="https://apis.google.com/js/platform.js" async defer></script>
     <meta charset="UTF-8">
-    <meta name="google-signin-client_id" content="604263226065-f0g59mgh1cprggs2jse6recv70cn5juh.apps.googleusercontent.com
-">
     <title>Bubble Chamber</title>
 </head>
 
@@ -14,8 +11,7 @@
     <div class="window">
         <div class="window-content">
             <div class="padded-more">
-                <div class="g-signin2" data-onsuccess="onSignIn"></div>
-
+                <h1 id="bigOne"></h1>
             </div>
         </div>
 
@@ -23,29 +19,23 @@
             <p class="title">Produced <span class="icon icon-star"> Darlene Zouras</p>
     </footer>
 </div>
-<script>
-    function isUserEqual(googleUser, firebaseUser) {
-    if (firebaseUser) {
-    var providerData = firebaseUser.providerData;
-    for (var i = 0; i < providerData.length; i++) {
-      if (providerData[i].providerId === firebase.auth.GoogleAuthProvider.PROVIDER_ID &&
-          providerData[i].uid === googleUser.getBasicProfile().getId()) {
-        // We don't need to reauth the Firebase connection.
-        return true;
-      }
-    }
-    }
-    return false;
-    }
-
-    function onSignIn(googleUser) {
-  var profile = googleUser.getBasicProfile();
-  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-  console.log('Name: ' + profile.getName());
-  console.log('Image URL: ' + profile.getImageUrl());
-  console.log('Email: ' + profile.getEmail());
-}
-
-</script>
 </body>
+
+<!-- FIREBASE STUFF -->
+<script src="https://www.gstatic.com/firebasejs/3.6.4/firebase.js"></script>
+<script>
+    // Initialize Firebase
+    var config = {
+        apiKey: "AIzaSyCpA9IrtjpFZyDtzmkfPlAkPvB1gf4oGJg",
+        authDomain: "bubblechamber-f4313.firebaseapp.com",
+        databaseURL: "https://bubblechamber-f4313.firebaseio.com",
+        storageBucket: "bubblechamber-f4313.appspot.com",
+        messagingSenderId: "604263226065"
+    };
+    firebase.initializeApp(config);
+
+    var provider = new firebase.auth.GoogleAuthProvider();
+    provider.addScope('https://www.googleapis.com/auth/plus.login');
+    
+</script>
 </html>
