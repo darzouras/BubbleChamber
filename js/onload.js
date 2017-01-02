@@ -119,6 +119,8 @@ window.onload = function() {
     /***************************************************************
     CLEARING THE CANVAS
     FIXME THE CANVAS DOES NOT STAY PERMANENTLY CLEARED :( !!!
+    Could be fixed by creating a canvas object that is removed while a new one is made.
+    ** might need to do this anyways to correct the behavior of the opacity.
     ***************************************************************/
     var buttonClear = document.getElementById('btn-clear');
     buttonClear.addEventListener('click', function(e) {
@@ -126,11 +128,6 @@ window.onload = function() {
 
       context.fillStyle =fillColor;
       context.fillRect(0, 0, canvas.width, canvas.height);
-      context.beginPath();
-      context.closePath();
-      context.stroke();
-      // redraw();
-
     });
 
 }

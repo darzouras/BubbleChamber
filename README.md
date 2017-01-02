@@ -15,4 +15,3 @@ Getting this program ready to run is super easy:
 * Clone the repository to your machine.  
 * In the command line enter the directory and `npm install`.  
 * Run by typing `npm start`.
-CURRENTLY there may be some errors when connecting while I work out the connection with my mysql server (running from a Raspberry Pi). Commenting out the line `var mysql = require("./dbcon.js");` in main.js should resolve any issues. Thanks!
