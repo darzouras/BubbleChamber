@@ -7,6 +7,7 @@ var currentColor = "#666666";
 var currentSize = 5;
 var currentOpacity = 1;
 var currentShape = "round";
+var fillColor = "#ffffff";
 
 // onclick function for color pickers
 function colorPick(colorCode) {
@@ -27,7 +28,6 @@ function shapePick(shape) {
 }
 
 window.onload = function() {
-
 
     /***************************************************************
     DRAWING MECHANICS
@@ -56,19 +56,20 @@ window.onload = function() {
     $('#canvas').mousemove(function(e) {
         if (paint) {
             addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop, true);
-            redraw();
         }
+        redraw();
     });
 
     // Mouse up event
     $('#canvas').mouseup(function(e) {
         paint = false;
+        redraw();
     });
 
     // Mouse leave event
-    $('#canvas').mouseleave(function(e) {
+    /* $('#canvas').mouseleave(function(e) {
         paint = false;
-    });
+    }); */
 
     var clickX = new Array();
     var clickY = new Array();
@@ -87,7 +88,6 @@ window.onload = function() {
 
     function redraw() {
         context.clearRect(0, 0, context.canvas.width, context.canvas.height);
-        // clears the canvas
 
         for (var i=0; i < clickX.length; i++) {
             context.beginPath();
@@ -107,10 +107,30 @@ window.onload = function() {
         }
     }
 
-    // saves the content of the canvas to local machine
+    /***************************************************************
+    SAVING THE CANVAS
+    ***************************************************************/
     var button = document.getElementById('btn-download');
     button.addEventListener('click', function (e) {
       var dataURL = canvas.toDataURL('image/png');
       button.href = dataURL;
     });
+
+    /***************************************************************
+    CLEARING THE CANVAS
+    FIXME THE CANVAS DOES NOT STAY PERMANENTLY CLEARED :( !!!
+    ***************************************************************/
+    var buttonClear = document.getElementById('btn-clear');
+    buttonClear.addEventListener('click', function(e) {
+      event.preventDefault();
+
+      context.fillStyle =fillColor;
+      context.fillRect(0, 0, canvas.width, canvas.height);
+      context.beginPath();
+      context.closePath();
+      context.stroke();
+      // redraw();
+
+    });
+
 }
