@@ -1,7 +1,8 @@
 // FIXME drawings does not match with cursor when using scrolling
-// FIXME write a canvas object that is inserted into the page, allow the height and width to be set (with some max limits).
 // FIXME load a default image that has some information about using the application!
 // FIXME write a button that wipes the entire canvas by deleting the active canvas object and creating a new one.
+
+var canvas, context, clickColor, clickSize, clickOpacity, clickShape, clickX, clickY, clickDrag;
 
 // CREATE CANVAS OBJECT
 function createCanvas(w, h) {
@@ -14,6 +15,22 @@ function createCanvas(w, h) {
     newCanvas.setAttribute("class", "drawing_canvas");
 
     canvasDiv.appendChild(newCanvas);
+
+    // the following must be initialized for each new canvas:
+    // BASE CANVAS
+    canvas = newCanvas;
+    context = canvas.getContext("2d");
+
+    // These arrays hold all of the changing variables
+    clickColor = new Array();
+    clickSize = new Array();
+    clickOpacity = new Array();
+    clickShape = new Array();
+    clickX = new Array();
+    clickY = new Array();
+    clickDrag = new Array();
+
+    context.clearRect(0, 0, w, h);
 }
 
 // and create the starting canvas
@@ -43,20 +60,34 @@ function shapePick(shape) {
     currentShape = shape;
 }
 
-window.onload = function() {
+/***************************************************************
+SAVING THE CANVAS
+***************************************************************/
+var button = document.getElementById('btn-download');
+button.addEventListener('click', function (e) {
+  var dataURL = canvas.toDataURL('image/png');
+  button.href = dataURL;
+});
+
+/***************************************************************
+CLEARING THE CANVAS
+FIXME THE CANVAS DOES NOT STAY PERMANENTLY CLEARED :( !!!
+Could be fixed by creating a canvas object that is removed while a new one is made.
+** might need to do this anyways to correct the behavior of the opacity.
+***************************************************************/
+var buttonClear = document.getElementById('btn-clear');
+buttonClear.addEventListener('click', function(e) {
+  document.getElementById('canvasDiv').removeChild(canvas);
+  createCanvas(470, 620);
+});
+
+
+
+// window.onload = function() {
 
     /***************************************************************
     DRAWING MECHANICS
     ***************************************************************/
-    // BASE CANVAS
-    var canvas = document.getElementById('canvas');
-    var context = canvas.getContext("2d");
-
-    // These arrays hold all of the changing variables
-    var clickColor = new Array();
-    var clickSize = new Array();
-    var clickOpacity = new Array();
-    var clickShape = new Array();
 
     // Mouse down event
     $('#canvas').mousedown(function(e) {
@@ -67,6 +98,8 @@ window.onload = function() {
         addClick(e.pageX - this.offsetLeft, e.pageY - this.offsetTop);
         redraw();
     });
+
+    var paint;
 
     // Mouse move event
     $('#canvas').mousemove(function(e) {
@@ -79,18 +112,13 @@ window.onload = function() {
     // Mouse up event
     $('#canvas').mouseup(function(e) {
         paint = false;
-        redraw();
+        // redraw();
     });
 
     // Mouse leave event
     /* $('#canvas').mouseleave(function(e) {
         paint = false;
     }); */
-
-    var clickX = new Array();
-    var clickY = new Array();
-    var clickDrag = new Array();
-    var paint;
 
     function addClick(x, y, dragging) {
         clickX.push(x);
@@ -123,27 +151,4 @@ window.onload = function() {
         }
     }
 
-    /***************************************************************
-    SAVING THE CANVAS
-    ***************************************************************/
-    var button = document.getElementById('btn-download');
-    button.addEventListener('click', function (e) {
-      var dataURL = canvas.toDataURL('image/png');
-      button.href = dataURL;
-    });
-
-    /***************************************************************
-    CLEARING THE CANVAS
-    FIXME THE CANVAS DOES NOT STAY PERMANENTLY CLEARED :( !!!
-    Could be fixed by creating a canvas object that is removed while a new one is made.
-    ** might need to do this anyways to correct the behavior of the opacity.
-    ***************************************************************/
-    var buttonClear = document.getElementById('btn-clear');
-    buttonClear.addEventListener('click', function(e) {
-      event.preventDefault();
-
-      context.fillStyle =fillColor;
-      context.fillRect(0, 0, canvas.width, canvas.height);
-    });
-
-}
+// }
