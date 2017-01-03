@@ -3,6 +3,22 @@
 // FIXME load a default image that has some information about using the application!
 // FIXME write a button that wipes the entire canvas by deleting the active canvas object and creating a new one.
 
+// CREATE CANVAS OBJECT
+function createCanvas(w, h) {
+    var canvasDiv = document.getElementById('canvasDiv');
+    var newCanvas = document.createElement('canvas');
+
+    newCanvas.setAttribute("id", "canvas");
+    newCanvas.setAttribute("width", w);
+    newCanvas.setAttribute("height", h);
+    newCanvas.setAttribute("class", "drawing_canvas");
+
+    canvasDiv.appendChild(newCanvas);
+}
+
+// and create the starting canvas
+createCanvas(470, 620);
+
 var currentColor = "#666666";
 var currentSize = 5;
 var currentOpacity = 1;
