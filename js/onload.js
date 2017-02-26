@@ -71,9 +71,7 @@ button.addEventListener('click', function (e) {
 
 /***************************************************************
 CLEARING THE CANVAS
-FIXME THE CANVAS DOES NOT STAY PERMANENTLY CLEARED :( !!!
-Could be fixed by creating a canvas object that is removed while a new one is made.
-** might need to do this anyways to correct the behavior of the opacity.
+FIXME THE NEW CANVAS IS NOT CORRECTLY INTERACTED WITH
 ***************************************************************/
 var buttonClear = document.getElementById('btn-clear');
 buttonClear.addEventListener('click', function(e) {
@@ -91,6 +89,7 @@ buttonClear.addEventListener('click', function(e) {
 
     // Mouse down event
     $('#canvas').mousedown(function(e) {
+        // the offsetLeft, offsetTop make scrolling problematic. FIXME disable scrolling, or set default sizes based on screen size.
         var mouseX = e.pageX - this.offsetLeft;
         var mouseY = e.pageY - this.offsetTop;
 
@@ -112,13 +111,7 @@ buttonClear.addEventListener('click', function(e) {
     // Mouse up event
     $('#canvas').mouseup(function(e) {
         paint = false;
-        // redraw();
     });
-
-    // Mouse leave event
-    /* $('#canvas').mouseleave(function(e) {
-        paint = false;
-    }); */
 
     function addClick(x, y, dragging) {
         clickX.push(x);
