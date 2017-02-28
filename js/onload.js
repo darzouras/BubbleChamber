@@ -1,10 +1,10 @@
 // FIXME drawings does not match with cursor when using scrolling
 // FIXME load a default image that has some information about using the application!
-// FIXME write a button that wipes the entire canvas by deleting the active canvas object and creating a new one.
+// FIXME write a button that wipes the entire canvas by deleting the active canvas object and creating a new one. Otherwise the entire page must be refreshed.
 
 var canvas, context, clickColor, clickSize, clickOpacity, clickShape, clickX, clickY, clickDrag;
 
-// CREATE CANVAS OBJECT
+// Create the drawing canvas
 function createCanvas(w, h) {
     var canvasDiv = document.getElementById('canvasDiv');
     var newCanvas = document.createElement('canvas');
@@ -34,7 +34,7 @@ function createCanvas(w, h) {
 }
 
 // and create the starting canvas
-createCanvas(470, 620);
+createCanvas(350, 531);
 
 var currentColor = "#666666";
 var currentSize = 5;
