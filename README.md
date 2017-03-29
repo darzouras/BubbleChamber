@@ -1,5 +1,7 @@
 # Electron Painter
 
+![alt text](https://github.com/darzouras/BubbleChamber/blob/master/electron_paint.png?raw=true)
+
 The goal for this Electron project is to create a simple drawing program, similar to an Oekaki board or [Tegaki](http://te2.tewi.us/).
 
 Currently there's not much to do, but I'm trying to add more functionality to it every day. Things that I hope to add to it soon include:
